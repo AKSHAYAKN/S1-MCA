@@ -1,9 +1,12 @@
-n=int(input("Enter the limit:"))
-a=0
-b=1
-print("Fibanocci series upto",n,"terms")
-for i in range(n):
-    print(a,end=" ")
-    temp=a
-    a=b
-    b=temp+b
+def fibo(n):
+    if n <= 1:
+        return n
+    else:
+        return fibo(n-1)+fibo(n-2)
+nterms = int(input("Enter the number of terms:"))
+if nterms <= 0:
+    print("Please enter a positive number")
+else:
+    print("Fibonacci sequence:")
+    for i in range(nterms):
+        print(fibo(i))
